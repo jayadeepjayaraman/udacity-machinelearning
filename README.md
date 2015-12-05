@@ -87,14 +87,17 @@ process was:
 ### Validation and Performance
 To validate the performance of each algorithm, `recall`, `precision` and `F1 scores` where calculated for each one. You can find below a summary of the scores of the top algorithms.
 
-|Feature | F1 Score | Recall | Precision |
-|--------|----------|--------|-----------|
-|Logistic Regression          |  0.43820 | 0.55400 | 0.36245 |
+|Feature | F1 Score | Recall | Precision | Accuracy |
+|--------|----------|--------|-----------|-----------|
+|Logistic Regression          |  0.42666 | 0.50100 | 0.37152 |0.82047|
 
 The best classifier was actually a *Logistic Regression* using PCA and scaling beforehand. This was achieved by using `sklearn Pipline`. The logistic regression achieved a consistent score above 0.30 for both precision and recall. 
 
 It seems that the most important parameter to tune was to set the `class_weight` to `auto`. I suspect this is due to the skewed nature of the dataset, because class weight assigns the importance of each class (POI or non-POI) depending on the inverse appearance of the class. So it set a much higher importance to POI's class which is exactly what we want in this case.
 
+The main evaluation metrics utilized were precision and recall. Precision captures the ratio of true positives to the records that are actually POIs, essentially describing how often 'false alarms' are (not) raised. Recall captures the ratio of true positives to the records flagged as POIs, which describes sensitivity. Due to the unbalanced nature of the dataset (few POIs), accuracy is certainly not a good metric, i.e. if 'non-POI' had been predicted for all records, an accuracy of 82.04% would have been achieved. 
+
+Given the context of assisting and enabling securities and fraud investigators, I would argue that precision is secondary to recall. Simply put, with the objective of 'flagging' individuals for further human-led investigation, it is more important that suspect individuals are included than innocent individuals be excluded. A high recall value would ensure that truly culpable individuals were flagged as POIs and would be investigated more thoroughly.
 
 ## Discussion and Conclusions
 This was just a starting point analysis for classifying Enron employees. The results should not be taken too seriously and more advanced models should be used. Possibilities for future research could be to include more complex pipelines for the data, or even Neural Networks. Here we tried a basic neural network, but the SkLearn library is very limited in what it has to offer in this regard.
