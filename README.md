@@ -100,7 +100,7 @@ The main evaluation metrics utilized were precision and recall. Precision captur
 Given the context of assisting and enabling securities and fraud investigators, I would argue that precision is secondary to recall. Simply put, with the objective of 'flagging' individuals for further human-led investigation, it is more important that suspect individuals are included than innocent individuals be excluded. A high recall value would ensure that truly culpable individuals were flagged as POIs and would be investigated more thoroughly.
 
 ## Discussion and Conclusions
-This was just a starting point analysis for classifying Enron employees. The results should not be taken too seriously and more advanced models should be used. Possibilities for future research could be to include more complex pipelines for the data, or even Neural Networks. Here we tried a basic neural network, but the SkLearn library is very limited in what it has to offer in this regard.
+The most challenging aspect of this project was the sparse nature of the dataset, with very few (18) POIs. Most of the algorithms employed perform much better in balanced datasets. An interesting next step would be to employ anomaly detection algorithms (as used in other cases of fraud, like credit card checking) to identify persons of interest. 
 
 ## References
 - [Udacity - Intro to Machine Learning course](https://www.udacity.com/course/ud120)
