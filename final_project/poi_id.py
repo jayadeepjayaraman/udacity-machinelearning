@@ -436,6 +436,12 @@ features = scale_features(features)
 # print summary_list
 # print "*"*100
 #
+
+#for i in range(len(ordered_list)):
+#    clf = ordered_list[i]
+#    test_classifier(clf, my_dataset, features_list)
+
+# Manually pick classifiers
 from sklearn import preprocessing
 
 scaler = preprocessing.MinMaxScaler(feature_range = [0,1])
@@ -453,10 +459,7 @@ clf = Pipeline(steps=[("scaler",scaler),("pca", pca), ("logistic", clf_logistic)
 
 test_classifier(clf, my_dataset, features_list)
 
-# Manually pick classifiers
-#for i in range(len(ordered_list)):
-#    clf = ordered_list[i]
-#    test_classifier(clf, my_dataset, features_list)
+
 
 
 ### Dump your classifier, dataset, and features_list so
