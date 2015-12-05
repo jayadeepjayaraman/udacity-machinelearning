@@ -45,6 +45,8 @@ I scaled the features using the MinMaxScalaer() as there are different kinds of 
 ### PCA
 I didnt spend too much time in using K-Best or any other feature reduction/selection techniques, the reason being I wanted to use PCA as a pre-processing step to one of the classifiers. It's quite reasonable to think that all the **email** features we have, 5 initial features plus 1 computed feature, really represent 1 underlying feature or principal component, something like increased amount of communication between POI's versus between POI's and non-POI's. The same goes for the financial features, which we could think are really measuring the POI's corruption via big money gains. In other words, we expect that a POI has a higher money gain compared to a non-POI, and that all the financial features are really trying to measure this underlying one. By tuning the parameters, we get the best classification results and from the **29** features in total, they are reduced to **20** principal components.
 
+> What algorithm did you end up using? What other one(s) did you try? How did model performance differ between algorithms?
+
 ## Algorithms selection and tuning
 For the analysis of the data, a total of 10 classifiers were tried out, which include:
 - Logistic Regression
@@ -61,10 +63,12 @@ For the analysis of the data, a total of 10 classifiers were tried out, which in
 The object of the algorithm is to classify and find out which people are more likely to be POI's. There are clearly
 2 categories we are looking to label the data.
 
+> What does it mean to tune the parameters of an algorithm, and what can happen if you don’t do this well?  How did you tune the parameters of your particular algorithm?
+
 To tune the overall performance, both automated and manual tuning of parameters was involved. The automated tuned parameters where done using the **GridSearchCV** from SkLearn. The manual tuning occurred in the following ways:
-1. Including the PCA features
-2. Adding/removing features
-3. Scaling features
+* 1. Including the PCA features
+* 2. Adding/removing features
+* 3. Scaling features
 
 For the most part, PCA made a huge improvement when the new features where added. PCA is kind of getting the best parts of the 29 features and cramming them up into 20. The new features really made the difference to push recall and precision up.
 
@@ -72,8 +76,13 @@ For the most part, PCA made a huge improvement when the new features where added
 ### Optimization
 All the machine-learning algorithms where optimized using **GridSearchCV**. The general
 process was:
-> build list of classifier with parameters > optimize each classifier with training data > evaluate all the classifiers > compare f1, recall and precision scores > choose the best classifier
+* > build list of classifier with parameters 
+* > optimize each classifier with training data 
+* > evaluate all the classifiers 
+* > compare f1, recall and precision scores 
+* > choose the best classifier
 
+> What is validation, and what’s a classic mistake you can make if you do it wrong? How did you validate your analysis?
 
 ### Validation and Performance
 To validate the performance of each algorithm, `recall`, `precision` and `F1 scores` where calculated for each one. You can find below a summary of the scores of the top algorithms.
