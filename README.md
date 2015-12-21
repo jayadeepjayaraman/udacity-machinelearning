@@ -99,6 +99,7 @@ To validate the performance of each algorithm, `recall`, `precision` and `F1 sco
 |Feature | F1 Score | Recall | Precision | Accuracy |
 |--------|----------|--------|-----------|-----------|
 |Logistic Regression          |  0.42666 | 0.50100 | 0.37152 |0.82047|
+|BernoulliRBM|0.39213|0.69250|0.27350|0.71373|
 
 The best classifier was actually a *Logistic Regression* using PCA and scaling beforehand. This was achieved by using `sklearn Pipline`. The logistic regression achieved a consistent score above 0.30 for both precision and recall. 
 
