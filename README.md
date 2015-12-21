@@ -126,7 +126,7 @@ The logistics regression algorithm in this particular case gave the following re
 |Precision|  0.37152|The precision value of 0.37 means that 37% of the times the POI was identified correctly amongst all people|
 |Recall|0.50100|The recall value of 0.510 means that 51% of the time POI was identified correctly when it was supposed to be have been identified|
 |Accuracy|0.82047|An accuracy was 82% means that model was able to identify a POI or non-POI correctly. The reason for not using accuracy has been mentioned in the above section|
-|F1-score|0.42666||
+|F1-score|0.42666|This is the harmonic mean value of precision and recall|
 
 Given the context of assisting and enabling securities and fraud investigators, I would argue that precision is secondary to recall. Simply put, with the objective of 'flagging' individuals for further human-led investigation, it is more important that suspect individuals are included than innocent individuals be excluded. A high recall value would ensure that truly culpable individuals were flagged as POIs and would be investigated more thoroughly.
 
