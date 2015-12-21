@@ -74,6 +74,11 @@ The object of the algorithm is to classify and find out which people are more li
 
 > What does it mean to tune the parameters of an algorithm, and what can happen if you don’t do this well?  How did you tune the parameters of your particular algorithm?
 
+Tuning is an important step in machine learning to improve the performance of an algorithm or to improve the different scores of the algorithm. In this machine learning problem the following tuning techniques have been applied
+
+* 1. Algorithm Tuning - This method is used to tune the different parameters of an algorithm to improve the performance of an algorthm. In this particular problem GridSearchCV was used wherein different configuration parameters were passed as input and the best paramters were selected
+* 2. Feature Engineering - This is another important technique wherein few of the critical features are selected known as Feature Selection or few of the features are transformed known as Feature Scaling. For this particular problem, feature selection was not applied but only feature scaling was implemented using Log and Squared Transformation as well as using MinMaxScalar() funtion.
+* 3. Ensembles - Another important technique of improving a machine learning algorithm is called Ensembles. For this particular problem Boosting which is to use different types of algorithms on the same training and testing dataset is used and the best algorithm is identified was used and also Blending or Pipelining was used wherein different algorithms are combined to get the best output.
 To tune the overall performance, both automated and manual tuning of parameters was involved. The automated tuned parameters where done using the **GridSearchCV** from SkLearn. The manual tuning occurred in the following ways:
 * 1. Including the PCA features
 * 2. Adding/removing features
