@@ -22,9 +22,9 @@ The interesting and hard part of the dataset is that the distribution of the non
 
 In total I have used 24 features, out of which 14 features are present in the input dataset and 10 new features were created.
 
-*. poi_ratio_messages - This feature calculates ratio of the messages exchanged with Person of Interest and the Total Messages
-*. Log Transformation - Few of the numerical values were converted to a corresponding log values
-*. Squared Transformation - Few of the numerical values were converted to a corresponding squared values
+- poi_ratio_messages - This feature calculates ratio of the messages exchanged with Person of Interest and the Total Messages
+- Log Transformation - Few of the numerical values were converted to a corresponding log values
+- Squared Transformation - Few of the numerical values were converted to a corresponding squared values
 
 Log and Squared transformed values were created because sometimes the numerical data is normally distributed when they are transformed that way.
 
