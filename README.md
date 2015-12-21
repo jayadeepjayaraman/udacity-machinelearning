@@ -79,6 +79,8 @@ Tuning is an important step in machine learning to improve the performance of an
 * 1. Algorithm Tuning - This method is used to tune the different parameters of an algorithm to improve the performance of an algorthm. In this particular problem GridSearchCV was used wherein different configuration parameters were passed as input and the best paramters were selected
 * 2. Feature Engineering - This is another important technique wherein few of the critical features are selected known as Feature Selection or few of the features are transformed known as Feature Scaling. For this particular problem, feature selection was not applied but only feature scaling was implemented using Log and Squared Transformation as well as using MinMaxScalar() funtion.
 * 3. Ensembles - Another important technique of improving a machine learning algorithm is called Ensembles. For this particular problem Boosting which is to use different types of algorithms on the same training and testing dataset is used and the best algorithm is identified was used and also Blending or Pipelining was used wherein different algorithms are combined to get the best output.
+
+
 To tune the overall performance, both automated and manual tuning of parameters was involved. The automated tuned parameters where done using the **GridSearchCV** from SkLearn. The manual tuning occurred in the following ways:
 * 1. Including the PCA features
 * 2. Adding/removing features
@@ -111,14 +113,13 @@ To validate the performance of each algorithm, `recall`, `precision` and `F1 sco
 |AdaBoostClassifier|0.10980|0.08350|0.16027|0.81947|
 |RandomForestClassifier|0.20522|0.17100|0.25656|0.82340|
 
-
-
-
 The best classifier was actually a *Logistic Regression* using PCA and scaling beforehand. This was achieved by using `sklearn Pipline`. The logistic regression achieved a consistent score above 0.30 for both precision and recall. 
 
 It seems that the most important parameter to tune was to set the `class_weight` to `auto`. I suspect this is due to the skewed nature of the dataset, because class weight assigns the importance of each class (POI or non-POI) depending on the inverse appearance of the class. So it set a much higher importance to POI's class which is exactly what we want in this case.
 
 The main evaluation metrics utilized were precision and recall. Precision captures the ratio of true positives to the records that are actually POIs, essentially describing how often 'false alarms' are (not) raised. Recall captures the ratio of true positives to the records flagged as POIs, which describes sensitivity. Due to the unbalanced nature of the dataset (few POIs), accuracy is certainly not a good metric, i.e. if 'non-POI' had been predicted for all records, an accuracy of 82.04% would have been achieved. 
+
+The logistics regression algorithm in this particular case 
 
 Given the context of assisting and enabling securities and fraud investigators, I would argue that precision is secondary to recall. Simply put, with the objective of 'flagging' individuals for further human-led investigation, it is more important that suspect individuals are included than innocent individuals be excluded. A high recall value would ensure that truly culpable individuals were flagged as POIs and would be investigated more thoroughly.
 
