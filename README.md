@@ -19,7 +19,16 @@ Below are some questions and their answers to understand the data and the machin
 The interesting and hard part of the dataset is that the distribution of the non-POI's to POI's is very skewed, given that from the 146 there are only 11 people or data points labeled as POI's or guilty of fraud. We are interested in labeling every person in the dataset into either a POI or a non-POI (POI stands for *Person Of Interest*). 
 
 ## Data Processing
-All features in the dataset are either financial data or features extracted from emails. Financial data includes features like salary and bonus while the email features include number of messages written/received and to whom/form.
+
+In total I have used 24 features, out of which 14 features are present in the input dataset and 10 new features were created.
+
+. poi_ratio_messages - This feature calculates ratio of the messages exchanged with Person of Interest and the Total Messages
+. Log Transformation - Few of the numerical values were converted to a corresponding log values
+. Squared Transformation - Few of the numerical values were converted to a corresponding squared values
+
+Log and Squared transformed values were created because sometimes the numerical data is normally distributed when they are transformed that way.
+
+As the data is very sparse I didn't filter any data which was NaN except for the Outlier removal as explained below.
 
 There are 2 clear outliers in the data, **TOTAL** and **THE TRAVEL AGENCY IN THE PARK**. The first one seems to be the sum total of all the other data points, while the second outlier is quite bizarre. Both these outliers are removed from the dataset for all the analysis. 
 
