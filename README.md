@@ -100,6 +100,14 @@ To validate the performance of each algorithm, `recall`, `precision` and `F1 sco
 |--------|----------|--------|-----------|-----------|
 |Logistic Regression          |  0.42666 | 0.50100 | 0.37152 |0.82047|
 |BernoulliRBM|0.39213|0.69250|0.27350|0.71373|
+|LinearSVC|0.40506|0.68100|0.28825|0.73327|
+|DecisionTreeClassifier|0.26573|0.25550|0.27681|0.81173|
+|LDA|0.26478|0.16800|0.62454|0.87560|
+|AdaBoostClassifier|0.10980|0.08350|0.16027|0.81947|
+|RandomForestClassifier|0.20522|0.17100|0.25656|0.82340|
+
+
+
 
 The best classifier was actually a *Logistic Regression* using PCA and scaling beforehand. This was achieved by using `sklearn Pipline`. The logistic regression achieved a consistent score above 0.30 for both precision and recall. 
 
