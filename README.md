@@ -101,6 +101,20 @@ process was:
 > What is validation, and what’s a classic mistake you can make if you do it wrong? How did you validate your analysis?
 
 ### Validation and Performance
+Validation is a critical component of a machine learning activity. Validation is the process wherein 
+
+* 1. If there are two different datasets are present then one dataset is used to train the model and the other dataset is used to test the model to see how good a fit the model is for the dataset.
+* 2. If there is a single dataset then a portion of the dataset is segregated for training the model and the remaining portion of the dataset is used for testing the model.
+
+These techniques are used to ensure that there is no overfitting of the model. Overfitting is the phenomena where the model can predict the outcome of the data using which it was trained but when used on another similar datasets the model fairs poorly.
+
+Further to point 2 mentioned above there are different techniques to split the data for ensuring that the model doesnt overfit or underfit, they are StratifiedShuffleSplit, train_test_split, StratifiedKFold etc.
+
+In this particular machine learning exercise the StratifiedShuffleSplit method of splitting the data is used because
+
+* a. The data is very sparse and the total training and testing dataset size is very small. 
+* b. There needs to be a way in which the input data is randomly distributed in the traning and testing dataset. It should not be the case that the training dataset contains all POI's and the testing dataset is all NON-POI's.
+
 To validate the performance of each algorithm, `recall`, `precision` and `F1 scores` where calculated for each one. You can find below a summary of the scores of the top algorithms.
 
 |Feature | F1 Score | Recall | Precision | Accuracy |
